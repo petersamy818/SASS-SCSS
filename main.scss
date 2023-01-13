@@ -279,3 +279,38 @@ $width: 200px;
     height: half($width);
     top: calculate(100px, 200px, 50px);
 }
+// mixin with content
+.black-overlay {
+    @include overlay(black, 0.5)
+}
+@include keyf(fade-in) {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+};
+@include keyf(go-up) {
+    from {
+        bottom: 0;
+    }
+    to {
+        bottom: 10px;
+    }
+};
+// If Condition + Mixin + Content
+.media {
+    @include breakpoints(mobile) {
+        font-size: 15px;
+    }
+    @include breakpoints(small) {
+        font-size: 18px;
+    }
+    @include breakpoints(medium) {
+        font-size: 20px;
+    }
+    @include breakpoints(large) {
+        font-size: 22px;
+    }
+}
